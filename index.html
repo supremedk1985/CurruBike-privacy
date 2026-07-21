@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Datenschutzerklärung für die CurruBike-App">
+<title>CurruBike – Datenschutzerklärung</title>
+<style>
+  :root {
+    --bg: #eef1ee;
+    --bg-raised: #ffffff;
+    --bg-sunken: #e4e8e3;
+    --ink: #161e1a;
+    --ink-soft: #3c4640;
+    --muted: #6b756e;
+    --rule: #d3d9d1;
+    --accent: #c85a22;
+    --accent-soft: #c85a2214;
+    --accent-rule: #c85a2255;
+    --on-accent: #fff8f3;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12160f;
+      --bg-raised: #191f19;
+      --bg-sunken: #0d100c;
+      --ink: #e8ece6;
+      --ink-soft: #c1c9bd;
+      --muted: #8a9488;
+      --rule: #2b322a;
+      --accent: #ef7d3f;
+      --accent-soft: #ef7d3f1c;
+      --accent-rule: #ef7d3f4a;
+      --on-accent: #1a0f06;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12160f;
+    --bg-raised: #191f19;
+    --bg-sunken: #0d100c;
+    --ink: #e8ece6;
+    --ink-soft: #c1c9bd;
+    --muted: #8a9488;
+    --rule: #2b322a;
+    --accent: #ef7d3f;
+    --accent-soft: #ef7d3f1c;
+    --accent-rule: #ef7d3f4a;
+    --on-accent: #1a0f06;
+  }
+  :root[data-theme="light"] {
+    --bg: #eef1ee;
+    --bg-raised: #ffffff;
+    --bg-sunken: #e4e8e3;
+    --ink: #161e1a;
+    --ink-soft: #3c4640;
+    --muted: #6b756e;
+    --rule: #d3d9d1;
+    --accent: #c85a22;
+    --accent-soft: #c85a2214;
+    --accent-rule: #c85a2255;
+    --on-accent: #fff8f3;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  header.masthead {
+    margin-bottom: 3rem;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin-bottom: 1.1rem;
+  }
+  .eyebrow::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--accent-rule);
+  }
+
+  h1 {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-weight: 500;
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0 0 1.1rem;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.6rem;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+  .meta-row span b {
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+
+  .tldr {
+    margin-top: 2.4rem;
+    background: var(--bg-raised);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 3px;
+    padding: 1.5rem 1.7rem 1.6rem;
+  }
+  .tldr-label {
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+    font-weight: 600;
+  }
+  .tldr ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .tldr li {
+    display: flex;
+    gap: 0.75em;
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .tldr li::before {
+    content: "›";
+    font-family: ui-monospace, monospace;
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  section.clause {
+    margin-top: 3.1rem;
+    padding-top: 2.6rem;
+    border-top: 1px solid var(--rule);
+  }
+  section.clause:first-of-type { margin-top: 3.4rem; }
+
+  .clause-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.1rem;
+  }
+  .clause-num {
+    font-family: ui-monospace, monospace;
+    font-size: 0.92rem;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .clause-head h2 {
+    font-family: ui-monospace, monospace;
+    font-size: 1.18rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .clause p { margin: 0 0 1rem; color: var(--ink-soft); max-width: 65ch; }
+  .clause p:last-child { margin-bottom: 0; }
+  .clause ul.plain {
+    margin: 0 0 1rem;
+    padding-left: 1.3rem;
+    color: var(--ink-soft);
+  }
+  .clause ul.plain li { margin-bottom: 0.4rem; }
+  .clause ul.plain:last-child { margin-bottom: 0; }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.3rem 0 1.3rem;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    min-width: 480px;
+  }
+  thead th {
+    text-align: left;
+    font-family: ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--bg-sunken);
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  tbody td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-soft);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  td.key {
+    font-family: ui-monospace, monospace;
+    font-size: 0.86rem;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .contact {
+    margin-top: 3.4rem;
+    padding: 1.8rem;
+    background: var(--bg-raised);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.3rem;
+  }
+  .contact-item .label {
+    font-family: ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+  .contact-item .value {
+    color: var(--ink);
+    font-size: 0.98rem;
+  }
+
+  footer.foot {
+    margin-top: 3.5rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 560px) {
+    .page { padding: 3rem 1.1rem 4rem; }
+    .clause-head { flex-direction: column; gap: 0.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">CurruBike · Fahrradcomputer-App</div>
+    <h1>Datenschutzerklärung</h1>
+    <div class="meta-row">
+      <span>Stand: <b>21. Juli 2026</b></span>
+      <span>Verantwortlicher: <b>Daniel K.</b></span>
+      <span>Kontakt: <b><a href="mailto:1985dk1@googlemail.com">1985dk1@googlemail.com</a></b></span>
+    </div>
+
+    <div class="tldr">
+      <div class="tldr-label">Kurzfassung</div>
+      <ul>
+        <li>Alle Fahrtdaten — Strecke, Tempo, Höhenprofil — bleiben ausschließlich lokal auf deinem Gerät gespeichert.</li>
+        <li>Es gibt keine Nutzerkonten, keine Cloud-Synchronisierung, kein Tracking und keine Werbung.</li>
+        <li>Standort- und Sensordaten dienen ausschließlich der Aufzeichnung deiner Fahrt auf dem Gerät — nicht der Übertragung an uns.</li>
+        <li>Einzige Internetverbindung der App: Abruf von Kartenkacheln bei OpenStreetMap für die Kartenanzeige.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">01</span>
+      <h2>Verantwortlicher</h2>
+    </div>
+    <p>
+      Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für die Datenverarbeitung
+      im Zusammenhang mit der App <strong>CurruBike</strong> ist:
+    </p>
+    <p>
+      Daniel K.<br>
+      E-Mail: <a href="mailto:1985dk1@googlemail.com">1985dk1@googlemail.com</a>
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">02</span>
+      <h2>Grundsatz: lokale Datenverarbeitung</h2>
+    </div>
+    <p>
+      CurruBike ist als Offline-First-App konzipiert. Sämtliche personenbezogenen Daten, die bei
+      der Nutzung entstehen — insbesondere Standortdaten und daraus abgeleitete Fahrtstatistiken —
+      werden ausschließlich lokal in einer Datenbank auf deinem Gerät gespeichert. Es findet keine
+      Übertragung dieser Daten an Server des Anbieters statt; der Anbieter hat zu keinem Zeitpunkt
+      Zugriff auf diese Daten.
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">03</span>
+      <h2>Welche Daten verarbeitet werden</h2>
+    </div>
+    <p>Bei der Nutzung der App werden folgende Datenkategorien lokal auf deinem Gerät verarbeitet:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Datenart</th><th>Zweck</th><th>Speicherort</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="key">GPS-Standort (fein/grob, auch im Hintergrund)</td>
+            <td>Aufzeichnung von Strecke, Distanz, Geschwindigkeit und Streckenverlauf während einer Fahrt</td>
+            <td>Gerät (lokale Datenbank)</td>
+          </tr>
+          <tr>
+            <td class="key">Bewegungssensor (Activity Recognition)</td>
+            <td>Erkennung von Stillstand zur automatischen Pause</td>
+            <td>Gerät, nur Echtzeit­auswertung, keine Speicherung</td>
+          </tr>
+          <tr>
+            <td class="key">Luftdrucksensor (Barometer)</td>
+            <td>Berechnung von Höhenprofil und Steigung</td>
+            <td>Gerät (Teil der Fahrtdaten)</td>
+          </tr>
+          <tr>
+            <td class="key">Fahrtstatistiken</td>
+            <td>Distanz, Dauer, Geschwindigkeit, Höhenmeter, Kalorien — Anzeige in „Meine Strecken“</td>
+            <td>Gerät (lokale Datenbank)</td>
+          </tr>
+          <tr>
+            <td class="key">Fahrrad-Profile</td>
+            <td>Zuordnung von Fahrten zu einem angelegten Fahrrad</td>
+            <td>Gerät (lokale Datenbank)</td>
+          </tr>
+          <tr>
+            <td class="key">App-Einstellungen</td>
+            <td>Theme, aktive Ansichten, Energiesparmodus u. Ä.</td>
+            <td>Gerät (lokaler Einstellungsspeicher)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">04</span>
+      <h2>Angeforderte Berechtigungen</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Berechtigung</th><th>Zweck</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="key">Standort (fein / grob / Hintergrund)</td><td>Streckenaufzeichnung während einer Fahrt</td></tr>
+          <tr><td class="key">Bewegung &amp; Fitness</td><td>Automatische Pause bei Stillstand</td></tr>
+          <tr><td class="key">Benachrichtigungen</td><td>Anzeige des Foreground-Service während der Aufzeichnung</td></tr>
+          <tr><td class="key">Anzeige über anderen Apps</td><td>Tempo-Overlay, wenn die App im Hintergrund läuft</td></tr>
+          <tr><td class="key">Internet</td><td>Abruf von Kartenkacheln (siehe Abschnitt 05)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Alle Berechtigungen kannst du jederzeit über die Android-Systemeinstellungen einsehen und widerrufen.</p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">05</span>
+      <h2>Kartendarstellung (OpenStreetMap)</h2>
+    </div>
+    <p>
+      In „Meine Strecken“ wird der Streckenverlauf über Kartenmaterial von OpenStreetMap dargestellt
+      (Bibliothek <span class="mono">osmdroid</span>). Zum Laden der Kartenkacheln baut die App eine
+      Verbindung zu den Tile-Servern von OpenStreetMap auf. Dabei wird technisch bedingt deine
+      IP-Adresse an diese Server übermittelt; deine Fahrt- oder Standortdaten werden dabei nicht
+      übertragen. Verantwortlich für diese Verarbeitung ist die OpenStreetMap Foundation.
+      Weitere Informationen: <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">osmfoundation.org/wiki/Privacy_Policy</a>.
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">06</span>
+      <h2>Weitergabe an Dritte</h2>
+    </div>
+    <p>
+      Abgesehen vom in Abschnitt 05 beschriebenen Kartenkachel-Abruf erfolgt keine Weitergabe deiner
+      Fahrt-, Standort- oder Sensordaten an Dritte. Die App enthält keine Analyse-, Tracking- oder
+      Werbe-SDKs und keine Nutzerkonten.
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">07</span>
+      <h2>Export und Import deiner Daten</h2>
+    </div>
+    <p>
+      Über die Einstellungen kannst du deine Fahrtdaten als Datei exportieren bzw. eine zuvor
+      exportierte Datei wieder importieren. Diese Aktion wird ausschließlich von dir selbst
+      ausgelöst; die entstehende Datei verwaltest du eigenständig (z. B. Speicherort, Weitergabe,
+      Sicherung). Der Anbieter erhält dabei keinen Zugriff auf die Datei.
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">08</span>
+      <h2>Speicherdauer und Löschung</h2>
+    </div>
+    <p>
+      Fahrtdaten verbleiben lokal gespeichert, bis du sie löschst. Einzelne Fahrten oder sämtliche
+      Aufzeichnungen kannst du jederzeit über die App löschen (Einstellungen → Alle Aufzeichnungen
+      löschen). Eine Deinstallation der App entfernt ebenfalls alle lokal gespeicherten Daten,
+      sofern keine Android-Systemsicherung aktiv ist (siehe Abschnitt 09).
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">09</span>
+      <h2>Android-Systemsicherung (Auto Backup)</h2>
+    </div>
+    <p>
+      Die App unterstützt die automatische Gerätesicherung von Android. Ist diese in deinen
+      Systemeinstellungen aktiviert, können App-Daten verschlüsselt in deinem Google-Konto
+      gesichert werden. Diese Verarbeitung erfolgt durch Google, nicht durch den Anbieter dieser
+      App — siehe dazu die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.
+      Du kannst diese Funktion jederzeit in den Android-Systemeinstellungen deaktivieren.
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">10</span>
+      <h2>Kontaktaufnahme per E-Mail</h2>
+    </div>
+    <p>
+      Wenn du uns per E-Mail kontaktierst, verarbeiten wir deine Angaben — insbesondere
+      E-Mail-Adresse und Inhalt der Nachricht — ausschließlich zur Bearbeitung deines Anliegens.
+      Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung
+      von Anfragen). Die Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr
+      erforderlich sind.
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">11</span>
+      <h2>Deine Rechte</h2>
+    </div>
+    <p>
+      Da alle Daten ausschließlich lokal auf deinem Gerät gespeichert sind und der Anbieter keinen
+      Zugriff darauf hat, kannst du die dir nach der DSGVO zustehenden Rechte in aller Regel direkt
+      in der App selbst wahrnehmen:
+    </p>
+    <ul class="plain">
+      <li><strong>Auskunft</strong> (Art. 15 DSGVO) — Einsicht über „Meine Strecken“ und die Statistik-Ansichten.</li>
+      <li><strong>Berichtigung</strong> (Art. 16) — z. B. Bearbeiten deiner Fahrrad-Profile.</li>
+      <li><strong>Löschung</strong> (Art. 17) — jederzeit über die App-Einstellungen.</li>
+      <li><strong>Datenübertragbarkeit</strong> (Art. 20) — über die Export-Funktion als Datei.</li>
+      <li><strong>Widerruf von Berechtigungen</strong> (Art. 21) — jederzeit über die Android-Systemeinstellungen.</li>
+    </ul>
+    <p>
+      Bei Fragen zur Verarbeitung kannst du dich jederzeit an den in Abschnitt 01 genannten Kontakt
+      wenden. Unabhängig davon steht dir ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde
+      zu.
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">12</span>
+      <h2>Datensicherheit</h2>
+    </div>
+    <p>
+      Da alle personenbezogenen Daten ausschließlich lokal auf deinem Gerät verbleiben, hängt ihr
+      Schutz maßgeblich von den Sicherheitsmechanismen deines Geräts ab (z. B. Displaysperre,
+      Geräteverschlüsselung). Es wird empfohlen, dein Gerät entsprechend abzusichern.
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">13</span>
+      <h2>Minderjährige</h2>
+    </div>
+    <p>
+      CurruBike richtet sich nicht gezielt an Kinder. Da sämtliche Daten ausschließlich lokal auf
+      dem Gerät verbleiben und nicht an den Anbieter übertragen werden, erfolgt auch keine gezielte
+      Erhebung von Daten Minderjähriger durch den Anbieter.
+    </p>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head">
+      <span class="clause-num mono">14</span>
+      <h2>Änderungen dieser Erklärung</h2>
+    </div>
+    <p>
+      Diese Datenschutzerklärung wird angepasst, wenn sich Funktionsumfang oder rechtliche
+      Anforderungen der App ändern. Die jeweils aktuelle Fassung ist unter der im Play Store
+      hinterlegten URL sowie in der App abrufbar.
+    </p>
+  </section>
+
+  <div class="contact">
+    <div class="contact-item">
+      <div class="label">Verantwortlicher</div>
+      <div class="value">Daniel K.</div>
+    </div>
+    <div class="contact-item">
+      <div class="label">Kontakt</div>
+      <div class="value"><a href="mailto:1985dk1@googlemail.com">1985dk1@googlemail.com</a></div>
+    </div>
+    <div class="contact-item">
+      <div class="label">App</div>
+      <div class="value">CurruBike (de.korte_daniel.currubike)</div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>CurruBike — Datenschutzerklärung</span>
+    <span class="mono">Stand 21.07.2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
