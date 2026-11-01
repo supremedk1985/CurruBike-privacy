@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fundus – Datenschutz / Privacy</title>
+<style>body{font-family:system-ui,sans-serif;max-width:680px;margin:2rem auto;padding:0 16px;line-height:1.55;color:#111}h1{font-size:1.5rem}h2{font-size:1.15rem;margin-top:2rem}</style></head>
+<body>
+<h1>Fundus – Datenschutzerklärung</h1>
+<p>Stand: 1. November 2026 · Anbieter: Daniel Korte</p>
+<p>Fundus hilft, Kleinteile in Kisten einzulagern und wiederzufinden. Die App ist die Bedienung eines <b>Fundus-Servers, den du selbst betreibst</b> (Anleitung: <a href="https://github.com/supremedk1985/Fundus">github.com/supremedk1985/Fundus</a>). Der Entwickler betreibt für die App keinen Server und erhält keine Daten aus ihr: kein Konto beim Entwickler, keine Werbung, keine eigenen Analyse- oder Absturzdienste, kein Verkauf und keine Weitergabe von Daten.</p>
+<h2>Was die App sendet, und wohin</h2>
+<ul>
+<li><b>Nur an die Serveradresse, die du einträgst.</b> Dorthin gehen dein Passwort zur Anmeldung, die Fotos, die du aufnimmst oder auswählst, und alles, was du erfasst (Kisten, Räume, Regale, Sachen, Mengen, Notizen, Projekte, geteilte Shop-Links). Wer den Server betreibt und was er speichert, entscheidest du bzw. sein Betreiber.</li>
+<li><b>Bilderkennung (freiwillig):</b> Trägst du in der App einen eigenen OpenAI-Schlüssel ein, wird er auf deinem Server gespeichert, nicht in der App. Dein Server schickt dann für jede Erkennung das Foto und die Namen deiner Bereiche an OpenAI und bekommt einen Vorschlag zurück. Dafür gelten die Bedingungen von OpenAI unter deinem Konto. Ohne Schlüssel verlässt kein Foto deinen Server.</li>
+<li><b>Shop-Links:</b> Teilst du einen Produktlink an Fundus, ruft dein Server die Produktseite ab, um Titel und Bild zu übernehmen.</li>
+<li><b>QR-Codes</b> der Kisten liest die App mit Googles ML Kit auf dem Gerät; die Kamerabilder werden dafür nicht verschickt. <b>Diagnosedaten von ML Kit:</b> ML Kit sendet technische Angaben an Google, um die Erkennung zu betreuen: Gerätehersteller und -modell, Android-Version, App-Name und -Version, eine Kennung je Installation (nicht dazu gedacht, Person oder Gerät zu erkennen), Leistungs- und Fehlerwerte sowie Art der Erkennungsaufrufe – verschlüsselt übertragen, laut Google nicht an Dritte weitergegeben. Kamerabilder und Inhalte der Codes gehören nicht dazu. Einzelheiten: <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit – Data disclosure</a>.</li>
+<li><b>Spracheingabe</b> nutzt die Spracherkennung deines Handys (meist Google); die App bekommt nur den erkannten Text. Dafür gelten die Bedingungen des Anbieters der Spracherkennung.</li>
+<li>Etiketten und Texte, die du teilst oder kopierst, gehen an die App, die du dabei wählst.</li>
+</ul>
+<h2>Was auf dem Handy bleibt</h2>
+<ul>
+<li>Die Serveradresse und das Anmeldezeichen (nicht das Passwort) im privaten Speicher der App; „Abmelden“ löscht das Anmeldezeichen.</li>
+<li>Nur wenn du die Anmeldung mit Fingerabdruck einschaltest: das Passwort, verschlüsselt mit einem Schlüssel im Schlüsselspeicher des Handys, der sich nur nach deinem Fingerabdruck öffnet. Es verlässt das Handy nie.</li>
+<li>Einstellungen wie das Etikettenformat und zwischengespeicherte Vorschaubilder.</li>
+</ul>
+<p>Die App ist von Cloud-Sicherungen ausgenommen. Deinstallieren löscht alles oben Genannte; was auf deinem Server liegt, bleibt dort.</p>
+<h2>Berechtigungen</h2>
+<ul>
+<li><b>Kamera</b> – für Fotos der Sachen und zum Scannen der Kisten-Etiketten.</li>
+<li><b>Internet und Netzwerkstatus</b> – für die Verbindung zu deinem Server.</li>
+<li><b>Fingerabdruck</b> – nur, wenn du die Anmeldung damit einschaltest.</li>
+</ul>
+<h2>Kontakt</h2>
+<p>Fragen über die Kontaktadresse im Google-Play-Eintrag.</p>
+
+<h1 lang="en">Fundus – Privacy policy</h1>
+<p lang="en">As of 1 November 2026 · Provider: Daniel Korte</p>
+<div lang="en">
+<p>Fundus helps you store small parts in boxes and find them again. The app is the front end of a <b>Fundus server that you run yourself</b> (guide: <a href="https://github.com/supremedk1985/Fundus">github.com/supremedk1985/Fundus</a>). The developer runs no server for the app and receives no data from it: no developer account, no ads, no analytics or crash reporting of its own, no selling or sharing of data.</p>
+<h2>What the app sends, and where</h2>
+<ul>
+<li><b>Only to the server address you enter.</b> It receives your password to sign in, the photos you take or pick, and everything you record (boxes, rooms, shelves, items, quantities, notes, projects, shared shop links). Who runs that server and what it stores is up to you or its operator.</li>
+<li><b>Image recognition (optional):</b> If you enter your own OpenAI key in the app, it is stored on your server, not in the app. For each recognition your server then sends the photo and the names of your categories to OpenAI and receives a suggestion. OpenAI's terms apply under your account. Without a key no photo leaves your server.</li>
+<li><b>Shop links:</b> If you share a product link with Fundus, your server fetches the product page to take over title and image.</li>
+<li><b>QR codes</b> of the boxes are read on the device with Google's ML Kit; camera images are not sent anywhere for this. <b>ML Kit diagnostics:</b> ML Kit sends technical information to Google to maintain its detection: device manufacturer and model, Android version, app name and version, a per-installation identifier (not intended to identify a person or device), performance and error values, and the type of detection calls – encrypted in transit and, according to Google, not shared with third parties. Camera images and code contents are not included. Details: <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit – Data disclosure</a>.</li>
+<li><b>Voice input</b> uses your phone's speech recognition (usually Google); the app only receives the recognized text. The terms of the speech recognition provider apply.</li>
+<li>Labels and texts you share or copy go to the app you choose.</li>
+</ul>
+<h2>What stays on the phone</h2>
+<ul>
+<li>The server address and the sign-in token (not the password) in the app's private storage; "Sign out" deletes the token.</li>
+<li>Only if you turn on fingerprint sign-in: the password, encrypted with a key in the phone's keystore that only opens after your fingerprint. It never leaves the phone.</li>
+<li>Settings such as the label size, and cached thumbnails.</li>
+</ul>
+<p>The app is excluded from cloud backups. Uninstalling deletes everything listed above; what is on your server stays there.</p>
+<h2>Permissions</h2>
+<ul>
+<li><b>Camera</b> – for photos of items and to scan box labels.</li>
+<li><b>Internet and network state</b> – to connect to your server.</li>
+<li><b>Fingerprint</b> – only if you turn on fingerprint sign-in.</li>
+</ul>
+<h2>Contact</h2>
+<p>Questions via the contact address in the Google Play listing.</p>
+</div>
+</body></html>
